@@ -7,6 +7,7 @@ const defaultTheme = {
     primary: '#FF8400',
 
     text: '#000000',
+    text_link: '#bcbcbc',
   },
 };
 

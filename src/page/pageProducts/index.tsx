@@ -1,8 +1,12 @@
+import styled from 'styled-components';
+
+const StyledProducts = styled.div``;
+
 function PageProducts() {
   return (
-    <div>
+    <StyledProducts>
       productsComponent
-    </div>
+    </StyledProducts>
   );
 }
 

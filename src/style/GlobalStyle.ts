@@ -19,7 +19,8 @@ const GlobalStyle = createGlobalStyle`
 	}
 
   a {
-    color: ${({ theme }) => theme.colors.text};
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.text_link};
   }
 
 	button {
