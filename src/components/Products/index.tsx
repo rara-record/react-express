@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { ProductSummary } from '../../types';
+import numberFormat from '../../utils/numberFormat';
 
 type ProductProps = {
   product: ProductSummary
@@ -10,7 +11,22 @@ type ProductsProps = {
   products: ProductSummary[];
 }
 
-const StyledProductsContainer = styled.div``;
+const StyledProductsContainer = styled.div`
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  li {
+    width: 20%;
+    padding: 1rem;
+  }
+  
+  a {
+    display: block;
+  }
+  
+`;
 
 const StyledThumbnail = styled.img.attrs({
   alt: 'Thumbnail',
@@ -39,6 +55,7 @@ function Products({ products }: ProductsProps) {
           <li key={product.id}>
             <Link to={`/products/${product.id}`}>
               <Product product={product} />
+              <div>{numberFormat(product.price)}</div>
             </Link>
           </li>
         ))}
