@@ -1,7 +1,7 @@
 {
-  "name": "frontend-survival-week05",
+  "name": "react-shopping-mall",
   "version": "1.0.0",
-  "description": "프론트엔드 생존코스 5주차 과제",
+  "description": "shopping-mall",
   "source": "index.html",
   "scripts": {
     "start": "parcel --port 8080",
@@ -17,7 +17,7 @@
     "codeceptjs:ui": "codecept-ui --app",
     "ci": "concurrently -s first -k 'npm:serve' 'sleep 3 && npm run codeceptjs'"
   },
-  "author": "seedwhale",
+  "author": "BORA",
   "license": "ISC",
   "devDependencies": {
     "@codeceptjs/configure": "^0.10.0",
