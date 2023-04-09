@@ -48,6 +48,10 @@ function Product({ product }: ProductProps) {
 }
 
 function Products({ products }: ProductsProps) {
+  if (!products.length) {
+    return <div>loading...</div>;
+  }
+
   return (
     <StyledProductsContainer>
       <ul>

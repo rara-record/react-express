@@ -18,7 +18,7 @@ const StyledNavigation = styled.nav`
 function Header() {
   return (
     <StyledNavigation>
-      <Link to="/products">
+      <Link to="/">
         home
       </Link>
       <Link to="/products">
