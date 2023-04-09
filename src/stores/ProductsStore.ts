@@ -11,10 +11,11 @@ class ProductsStore {
   products: ProductSummary[] = [];
 
   // fetch 함수 생성
-  async fetchProducts() {
+  async fetchProducts({ categoryId }:
+    {categoryId?: string}) {
     this.setProducts([]);
 
-    const products = await apiService.fetchProducts();
+    const products = await apiService.fetchProducts({ categoryId });
 
     this.setProducts(products ?? []);
   }

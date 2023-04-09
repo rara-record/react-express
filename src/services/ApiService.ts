@@ -1,9 +1,8 @@
-import axios from 'axios/index';
+import axios from 'axios';
 import { Category, ProductSummary } from '../types';
 
 // API의 base URL을 지정하기 위해 환경변수를 활용한다.
-const API_BASE_URL = process.env.API_BASE_URL
-  || 'https://shop-demo-api-01.fly.dev';
+const API_BASE_URL = process.env.API_BASE_URL || 'https://shop-demo-api-01.fly.dev';
 
 // API 호출을 모아주는 ApiService를 만든다.
 export default class ApiService {
@@ -17,8 +16,14 @@ export default class ApiService {
     return categories;
   }
 
-  async fetchProducts():Promise<ProductSummary[]> {
-    const { data } = await this.instance.get('/products');
+  async fetchProducts({
+    categoryId,
+  }: {
+    categoryId?: string;
+  } = {}): Promise<ProductSummary[]> {
+    const { data } = await this.instance.get('/products', {
+      params: { categoryId },
+    });
     const { products } = data;
     return products;
   }

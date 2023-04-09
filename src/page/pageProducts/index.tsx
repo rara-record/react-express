@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useSearchParams } from 'react-router-dom';
 import useFetchProducts from '../../hooks/useFetchProducts';
 import Products from '../../components/Products';
 
@@ -12,7 +13,11 @@ const StyledProducts = styled.div`
 `;
 
 function PageProducts() {
-  const { products } = useFetchProducts();
+  const [params] = useSearchParams();
+
+  const categoryId = params.get('categoryId') ?? undefined;
+
+  const { products } = useFetchProducts({ categoryId });
 
   return (
     <StyledProducts>
